@@ -1,8 +1,14 @@
 package main
 
-import "fmt"
-
+import (
+	"RZip/Ui"
+	"fyne.io/fyne/app"
+)
 func main() {
-	dealer := GetDealer("glib_2.26.0-1_win64.zip")
-	fmt.Println(dealer.GetNowFiles())
+	dealer := GetDealer("test.7z")
+	dealer.GetNowFiles()
+	return
+	app := app.New()
+	mainWindow := Ui.New(app)
+	mainWindow.Run("")
 }

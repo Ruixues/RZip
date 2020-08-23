@@ -15,6 +15,8 @@ type FileTreeNode struct {
 	FileInfo interface{}
 	Sons     map[string]*FileTreeNode //根据名称 因为名称是唯一的
 	Message  FileMessage
+	Proxy	 string	//路径前缀
+	Father *FileTreeNode
 }
 type Dealer interface {
 	GetNowPath() string                   //获取当前的路径

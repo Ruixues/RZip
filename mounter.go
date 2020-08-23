@@ -22,7 +22,18 @@ func GetDealer(FileName string) abstract.Dealer {
 	}
 	switch t.Extension {
 	case "zip":
-		return Modules.NewZip(FileName)
+		ret := Modules.NewZip(FileName)
+		return &ret
+	case "rar":
+		ret := Modules.NewRarTar7Z(FileName)
+		return &ret
+	case "7z":
+		ret := Modules.NewRarTar7Z(FileName)
+		return &ret
+	case "tar":
+		ret := Modules.NewRarTar7Z(FileName)
+		return &ret
+	default:
+		return nil
 	}
-	return nil
 }
